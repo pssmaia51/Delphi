@@ -1,0 +1,121 @@
+unit U_Usu;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Mask, DBCtrls, ExtCtrls, Grids, DBGrids, ComCtrls,
+  Buttons;
+
+type
+  TFrm_Usu = class(TForm)
+    Panel1: TPanel;
+    Label2: TLabel;
+    Editusu: TDBEdit;
+    Label3: TLabel;
+    Editnome: TDBEdit;
+    Label4: TLabel;
+    Editsenha: TDBEdit;
+    Label5: TLabel;
+    Editconfirme: TDBEdit;
+    Label6: TLabel;
+    EditForcar: TDBEdit;
+    Label7: TLabel;
+    Edittravar: TDBEdit;
+    Label8: TLabel;
+    Editini: TDBEdit;
+    Label9: TLabel;
+    Editfim: TDBEdit;
+    Label10: TLabel;
+    Edituso: TDBEdit;
+    Label11: TLabel;
+    Editprevilegio: TDBEdit;
+    TrackBar1: TTrackBar;
+    Panel2: TPanel;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    BitBtn5: TBitBtn;
+    procedure BitBtn5Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frm_Usu: TFrm_Usu;
+
+implementation
+
+uses UDm, Unit_Principal;
+
+{$R *.dfm}
+
+procedure TFrm_Usu.BitBtn5Click(Sender: TObject);
+begin
+if MessageDlg('Voltar para o Menu Principal?',mtConfirmation,[mbyes,mbno],0)=mryes then
+begin
+Close;
+ end;
+end;
+
+procedure TFrm_Usu.FormShow(Sender: TObject);
+begin
+Dm.Query_Usu.Active:= False;
+dm.Query_Usu.ReadOnly:=true;
+bitbtn1.SetFocus;
+end;
+
+procedure TFrm_Usu.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+if Key = VK_ESCAPE then
+begin
+BitBtn5Click(Sender);
+end;
+end;
+
+procedure TFrm_Usu.BitBtn1Click(Sender: TObject);
+begin
+if MessageDlg('Incluir Novo Usuario?',mtConfirmation,[mbyes,mbno],0)=mryes then
+begin
+Dm.Query_Usu.Active:= True;
+dm.Query_Usu.ReadOnly:= False;
+dm.Query_Usu.Insert;
+dm.Query_Usu.Append;
+Editusu.SetFocus;
+end
+else
+begin
+Dm.Query_Usu.Active:= False;
+dm.Query_Usu.ReadOnly:= True;
+Close;
+end;
+end;
+
+procedure TFrm_Usu.BitBtn2Click(Sender: TObject);
+begin
+Dm.Query_Usu.close;
+//Dm.Query_Usu.Open;
+Dm.Query_Usu.ParamByName('Nome_Usu').AsString:= Editusu.Text;
+Dm.Query_Usu.ParamByName('Nome').AsString := Editnome.Text;
+Dm.Query_Usu.ParamByName('Senha').AsString := Editsenha.Text;
+Dm.Query_Usu.ParamByName('Confirmar').AsString := EditConfirme.Text;
+Dm.Query_Usu.ParamByName('Forcar').AsString := Editforcar.Text;
+Dm.Query_Usu.ParamByName('Travar').AsString := Edittravar.Text;
+//Dm.Query_Usu.ParamByName('Dt_Ini').AsString := StrToDateTime(Editini.Text);
+//Dm.Query_Usu.ParamByName('Dt_Fim').AsString := StrToDateTime(Editfim.Text);
+Dm.Query_Usu.ParamByName('Dias_Uso').AsString := Edituso.Text;
+Dm.Query_Usu.ParamByName('Previlegio').AsString := Editprevilegio.Text;
+Dm.Query_Usu.ExecSQL;
+Dm.Query_Usu.Active:= True;
+dm.Query_Usu.Refresh;
+MessageDlg('Registro Gravado com sucesso!',mtInformation,[mbOk],0);
+end;
+
+end.

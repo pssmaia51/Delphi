@@ -1,0 +1,17 @@
+program Ordem_de_servicos;
+
+uses
+  Forms,
+  Unit_Principal in 'Unit_Principal.pas' {Frm_Principal},
+  UDm in 'UDm.pas' {Dm: TDataModule},
+  U_Usu in 'U_Usu.pas' {Frm_Usu};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.Title := 'Sistema de Gestão em Logistica (SGL) 1.27.0';
+  Application.CreateForm(TFrm_Principal, Frm_Principal);
+  Application.CreateForm(TDm, Dm);
+  Application.Run;
+end.

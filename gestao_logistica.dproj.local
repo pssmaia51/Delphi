@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/07/15 10:19:08.000.110,=K:\Gestao logistica\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/07/15 10:52:25.000.999,K:\Gestao logistica\Fontes\Unit1.pas=K:\Gestao logistica\Fontes\U_Login.pas</Transaction>
+    <Transaction>2022/07/15 10:52:25.000.999,K:\Gestao logistica\Fontes\Unit1.dfm=K:\Gestao logistica\Fontes\U_Login.dfm</Transaction>
+    <Transaction>2022/07/15 15:34:15.000.399,=K:\Gestao logistica\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/07/15 15:34:33.000.902,K:\Gestao logistica\Fontes\ColorDBEdit.pas=K:\Gestao logistica\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/07/15 16:19:36.000.778,=K:\Gestao logistica\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/07/15 16:22:15.000.387,K:\Gestao logistica\Fontes\U_ColorEdit.pas=K:\Gestao logistica\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/07/17 20:08:25.000.428,=K:\Gestao logistica\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/07/17 20:10:32.000.084,K:\Gestao logistica\Fontes\Unit1.pas=K:\Gestao logistica\Fontes\U_splash.pas</Transaction>
+    <Transaction>2022/07/17 20:10:32.000.084,K:\Gestao logistica\Fontes\Unit1.dfm=K:\Gestao logistica\Fontes\U_splash.dfm</Transaction>
+    <Transaction>2022/07/18 17:15:09.000.295,=K:\Gestao logistica\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/07/18 17:42:51.000.955,K:\Gestao logistica\Fontes\Unit1.pas=K:\Gestao logistica\Fontes\U_sobre.pas</Transaction>
+    <Transaction>2022/07/18 17:42:51.000.955,K:\Gestao logistica\Fontes\Unit1.dfm=K:\Gestao logistica\Fontes\U_sobre.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

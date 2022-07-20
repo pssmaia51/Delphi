@@ -1,0 +1,82 @@
+object Dm: TDm
+  OldCreateOrder = False
+  Left = 405
+  Top = 180
+  Height = 441
+  Width = 556
+  object Connection: TZConnection
+    ControlsCodePage = cGET_ACP
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=GET_ACP')
+    Connected = True
+    HostName = 'localhost'
+    Port = 0
+    Database = 'logistica'
+    User = 'root'
+    Password = 'B3m8dsn#@'
+    Protocol = 'mysql-5'
+    Left = 464
+    Top = 24
+  end
+  object Query_Usu: TZQuery
+    Connection = Connection
+    Active = True
+    SQL.Strings = (
+      'select * from usuario')
+    Params = <>
+    Left = 24
+    Top = 16
+    object Query_UsuId: TIntegerField
+      FieldName = 'Id'
+      Required = True
+    end
+    object Query_UsuUsuario: TStringField
+      FieldName = 'Usuario'
+      Required = True
+    end
+    object Query_UsuNome: TStringField
+      FieldName = 'Nome'
+      Required = True
+      Size = 100
+    end
+    object Query_UsuSenha: TStringField
+      FieldName = 'Senha'
+      Required = True
+      Size = 15
+    end
+    object Query_UsuConfirmar: TStringField
+      FieldName = 'Confirmar'
+      Required = True
+      Size = 15
+    end
+    object Query_UsuForcar: TStringField
+      FieldName = 'Forcar'
+      Size = 1
+    end
+    object Query_UsuTravar: TStringField
+      FieldName = 'Travar'
+      Size = 1
+    end
+    object Query_UsuDt_Ini: TDateField
+      FieldName = 'Dt_Ini'
+    end
+    object Query_UsuDt_Fim: TDateField
+      FieldName = 'Dt_Fim'
+    end
+    object Query_UsuDias_Uso: TFloatField
+      FieldName = 'Dias_Uso'
+    end
+    object Query_UsuPrevilegio: TStringField
+      FieldName = 'Previlegio'
+      Required = True
+      Size = 30
+    end
+  end
+  object Ds_Usu: TDataSource
+    DataSet = Query_Usu
+    Left = 88
+    Top = 16
+  end
+end

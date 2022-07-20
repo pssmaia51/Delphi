@@ -1,0 +1,37 @@
+unit UDm;
+interface
+
+uses
+  SysUtils, Classes, DB, ZAbstractConnection, ZConnection,
+  ZAbstractRODataset, ZAbstractDataset, ZDataset, ZSqlUpdate,
+  ZStoredProcedure;
+  Type
+  TDm = class(TDataModule)
+    Connection: TZConnection;
+    Query_Usu: TZQuery;
+    Ds_Usu: TDataSource;
+    Query_UsuId: TIntegerField;
+    Query_UsuUsuario: TStringField;
+    Query_UsuNome: TStringField;
+    Query_UsuSenha: TStringField;
+    Query_UsuConfirmar: TStringField;
+    Query_UsuForcar: TStringField;
+    Query_UsuTravar: TStringField;
+    Query_UsuDt_Ini: TDateField;
+    Query_UsuDt_Fim: TDateField;
+    Query_UsuDias_Uso: TFloatField;
+    Query_UsuPrevilegio: TStringField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Dm: TDm;
+
+implementation
+
+{$R *.dfm}
+
+end.
